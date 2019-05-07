@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kermes extends Model
 {
-    protected $table = 'kermeses';
+    protected $table = 'kermes';
 
     protected $fillable = [
         'name','date','location','total_donation'
