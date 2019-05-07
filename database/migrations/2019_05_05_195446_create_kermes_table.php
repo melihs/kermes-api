@@ -15,6 +15,10 @@ class CreateKermesTable extends Migration
     {
         Schema::create('kermes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->dateTime('date');
+            $table->string('location');
+            $table->integer('total_donation');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateKermesDonorsTable extends Migration
     {
         Schema::create('kermes_donors', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('kermes_id');
+            $table->integer('donor_id');
             $table->timestamps();
         });
     }

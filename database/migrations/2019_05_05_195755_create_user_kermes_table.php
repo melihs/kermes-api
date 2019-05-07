@@ -15,6 +15,8 @@ class CreateUserKermesTable extends Migration
     {
         Schema::create('user_kermes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('kermes_id');
             $table->timestamps();
         });
     }

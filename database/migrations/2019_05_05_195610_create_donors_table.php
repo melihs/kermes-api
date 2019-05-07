@@ -15,6 +15,7 @@ class CreateDonorsTable extends Migration
     {
         Schema::create('donors', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('balance');
             $table->timestamps();
         });
     }
