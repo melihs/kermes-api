@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKermesDonorsTable extends Migration
+class CreateKermesDonorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKermesDonorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kermes_donors', function (Blueprint $table) {
+        Schema::create('kermes_donor', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('kermes_id');
             $table->integer('donor_id');
