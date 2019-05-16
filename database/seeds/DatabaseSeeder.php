@@ -17,6 +17,6 @@ class DatabaseSeeder extends Seeder
         factory(App\Transaction::class, 10)->create();
         factory(App\UserKermes::class, 10)->create();
         factory(App\KermesDonor::class, 10)->create();
-         $this->call(AdminSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

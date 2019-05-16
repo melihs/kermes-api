@@ -12,7 +12,7 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $token = Str::random(60);
+        $token = Str::random(80);
         DB::table('users')->insert([
             'name' => 'admin',
             'surname' => 'yetkili',

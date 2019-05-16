@@ -16,7 +16,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-        $token = Str::random(60);
+        $token = Str::random(80);
     return [
            'name' => $faker->name,
            'surname' => $faker->lastName,
