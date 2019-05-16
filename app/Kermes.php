@@ -12,4 +12,9 @@ class Kermes extends Model
         'name','date','location','total_donation'
     ];
 
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
+
 }
