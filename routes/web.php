@@ -11,9 +11,18 @@
 |
 */
 
-//Route::get('/', function () {
+Route::get('/', function () {
 //    return view('welcome');
-//});
+
+$user = \App\User::first();
+$kermes = \App\Kermes::first();
+
+//$user->kermeses()->attach($kermes);
+//$user->kermeses()->sync([2]);
+//$user->kermeses()->syncWithoutDetaching([5]);
+//$user->kermeses()->detach($kermes);
+//dd($kermes);
+});
 
 //Auth::routes();
 
