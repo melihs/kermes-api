@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','api_token',
     ];
 
     /**
@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function kermeses()
     {
-        return $this->belongsToMany('App\Kermes');
+        return $this->belongsToMany(Kermes::class)->withTimestamps();
     }
 }
