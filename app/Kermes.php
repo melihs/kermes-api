@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Kermes extends Model
 {
@@ -14,7 +15,7 @@ class Kermes extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 
 }
