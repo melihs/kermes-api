@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserKermesTable extends Migration
+class CreateKermesUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUserKermesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_kermes', function (Blueprint $table) {
+        Schema::create('kermes_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->integer('kermes_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('kermes_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUserKermesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_kermes');
+        Schema::dropIfExists('kermes_user');
     }
 }
