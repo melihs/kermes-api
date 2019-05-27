@@ -21,4 +21,5 @@ Route::group(['prefix' => 'v1'], function (){
 
 Route::middleware('auth:api')->prefix('v1')->group(function(){
     Route::resource('users','ApiController');
+    Route::resource('kermes','KermesController');
 });
