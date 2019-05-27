@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KermesDonor extends Model
 {
-    protected $table = 'kermes_donor';
+    protected $table = 'donor_kermes';
 
     protected $guarded = [];
 }

@@ -13,10 +13,10 @@ class CreateKermesDonorTable extends Migration
      */
     public function up()
     {
-        Schema::create('kermes_donor', function (Blueprint $table) {
+        Schema::create('donor_kermes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('kermes_id');
-            $table->integer('donor_id');
+            $table->unsignedBigInteger('donor_id');
+            $table->unsignedBigInteger('kermes_id');
             $table->timestamps();
         });
     }

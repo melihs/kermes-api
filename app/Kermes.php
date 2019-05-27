@@ -13,9 +13,16 @@ class Kermes extends Model
         'name','date','location','total_donation'
     ];
 
+    //users many to relations
     public function users()
     {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    //donor many to relations
+    public function donors()
+    {
+        return $this->belongsToMany(Donor::class)->withTimestamps();
     }
 
 }
