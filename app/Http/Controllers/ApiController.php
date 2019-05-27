@@ -11,6 +11,6 @@ class ApiController extends Controller
 
     public function store(Request $request)
     {
-        return UserResource::collection(User::find($request->user()));
+        return UserResource::collection(User::all());
     }
 }
