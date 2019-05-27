@@ -12,4 +12,15 @@ class Transaction extends Model
       'donor_id','user_id','sales','return','product','transfer','payment'
     ];
 
+    // one to many relations invers
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // one to many relations invers
+    public function donor()
+    {
+        return $this->belongsTo(Donor::class);
+    }
 }

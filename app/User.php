@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Kermes::class)->withTimestamps();
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
 }

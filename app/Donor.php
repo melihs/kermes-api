@@ -17,4 +17,9 @@ class Donor extends Model
         return $this->belongsToMany(Kermes::class)->withTimestamps();
     }
 
+    // transaction one to many relations
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
