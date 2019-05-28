@@ -25,7 +25,7 @@ class KermesController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
