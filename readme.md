@@ -14,7 +14,6 @@ POST /api/v1/logout
 User
 - GET     /api/v1/users
 - GET     /api/v1/users/:id
-- POST    /api/v1/users
 - PUT     /api/v1/users/:id
 - DELETE  /api/v1/users/:id
 

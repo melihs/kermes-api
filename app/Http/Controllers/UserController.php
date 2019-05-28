@@ -2,63 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\User as UserResource;
 use App\User;
+use App\Http\Requests\UserRequest;
+use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return json users
      */
     public function index()
     {
-        return UserResource::collection(User::all());
+        try{
+            return UserResource::collection(User::all());
+        }catch (\Exception $e){
+            return response()->json([$e->getMessage()]);
+        }
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * user show
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return json
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        try {
+            return new userResource(User::findOrFail($id));
+        }catch (\Exception $e) {
+            return response()->json([$e->getMessage()]);
+        }
     }
 
     /**
@@ -70,17 +45,34 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try{
+            $validated = $request->validate([
+                'name' => 'required|string',
+                'surname' => 'nullable',
+                'email' => 'required|email',
+                'type' => 'required|string',
+            ]);
+            User::findOrFail($id)->update($validated);
+
+            return response()->json(['user updated successfull']);
+        }catch (\Exception $e){
+            return response()->json([$e->getMessage()]);
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
+     * user delete
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return json
      */
     public function destroy($id)
     {
-        //
+        try{
+            $user = User::destroy($id);
+            return response()->json(['user deleted successfull']);
+        }catch (\Exception $e){
+            return response()->json([$e->getMessage()]);
+        }
     }
 }
