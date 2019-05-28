@@ -1,12 +1,13 @@
 {
-    "name": "laravel/laravel",
+    "name": "kermes-api",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "rest api for kermes automation",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "kermes-api"
     ],
-    "license": "MIT",
+    "license": "GPL-3.0",
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
