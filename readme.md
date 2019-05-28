@@ -7,9 +7,9 @@
 ## All Endpoints
 ```
 Auth
-POST /api/v1/register
-POST /api/v1/login
-POST /api/v1/logout
+- POST /api/v1/register
+- POST /api/v1/login
+- POST /api/v1/logout
 
 User
 - GET     /api/v1/users
